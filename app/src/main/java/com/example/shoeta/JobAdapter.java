@@ -70,6 +70,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.VH> {
                 ctx.startActivity(i);
             });
 
+
             if (h.btnBookmark != null && sm.isWorker()) {
                 h.btnBookmark.setText(
                         isSaved(jobId) ? "\uD83C\uDFF3\uFE0F" : "\uD83D\uDD16");
