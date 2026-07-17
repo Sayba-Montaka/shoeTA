@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <!-- Scrollable body -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Purple header banner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_gradient_header"
+                android:padding="24dp"
+                android:paddingBottom="36dp">
+
+                <!-- Top row: greeting + avatar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="আস-সালামু আলাইকুম 👋" android:textSize="13sp"
+                            android:textColor="#DDDAF8"/>
+                        <TextView
+                            android:id="@+id/tvWorkerName"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="আপনার নাম" android:textSize="22sp"
+                            android:textStyle="bold" android:textColor="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="46dp"
+                        android:layout_height="46dp">
+                        <ImageView
+                            android:id="@+id/navProfile"
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_avatar"
+                            android:scaleType="centerCrop"
+                            android:clipToOutline="true" />
+                        <TextView
+                            android:id="@+id/navProfileEmoji"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="👷"
+                            android:textSize="20sp"
+                            android:gravity="center"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Search bar inside header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_search"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🔍 " android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/tvSearchBar"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="চাকরি খুঁজুন / Search Jobs..."
+                        android:textSize="14sp" android:textColor="@color/text_hint"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Content area (pulled up over header) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/bg_page"
+                android:layout_marginTop="-16dp"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Filter chips row -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/chip_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="সব চাকরি"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            android:textColor="@color/chip_active_text"
+                            android:background="@drawable/bg_chip_active"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="18dp"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView
+                            android:id="@+id/full_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="Full-time"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            android:textColor="@color/chip_idle_text"
+                            android:background="@drawable/bg_chip_idle"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="18dp"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView
+                            android:id="@+id/part_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="Part-Time"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            android:textColor="@color/chip_idle_text"
+                            android:background="@drawable/bg_chip_idle"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="18dp"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView
+                            android:id="@+id/night_shift"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="Night Shift"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            android:textColor="@color/chip_idle_text"
+                            android:background="@drawable/bg_chip_idle"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="18dp"/>
+                        <TextView
+                            android:id="@+id/day_shift"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="Day Shift"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            android:textColor="@color/chip_idle_text"
+                            android:background="@drawable/bg_chip_idle"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="18dp"/>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Section: Specially Chosen -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="আপনার জন্য বাছাই / Chosen For You"
+                        android:textSize="16sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="সব দেখুন →" android:textSize="13sp" android:textColor="@color/text_accent"/>
+                </LinearLayout>
+
+                <!-- RecyclerView for featured jobs -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerFeaturedJobs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="24dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bottom_nav"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏠"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="10sp"
+                android:textColor="@color/accent_primary"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navJobs" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center" android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="💼" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Jobs" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navApplied" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center" android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📋" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Applied" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navSaved" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center" android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔖" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Saved" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navNotification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔔"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true" />
+</LinearLayout>

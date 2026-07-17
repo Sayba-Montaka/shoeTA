@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Purple profile header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_gradient_header"
+                android:padding="24dp"
+                android:paddingBottom="48dp"
+                android:gravity="center">
+
+                <!-- Avatar -->
+                <FrameLayout
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_marginBottom="14dp">
+                    <ImageView
+                        android:id="@+id/navProfile"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/bg_avatar"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true" />
+                    <TextView
+                        android:id="@+id/navProfileEmoji"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="👷"
+                        android:textSize="38sp"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+                <TextView android:id="@+id/tvProfileName"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="আপনার নাম" android:textSize="22sp"
+                    android:textStyle="bold" android:textColor="#FFFFFF"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- Role badge -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="কর্মী · Worker"
+                    android:textSize="12sp" android:textColor="#DDDAF8"
+                    android:background="@drawable/bg_chip_active"
+                    android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </LinearLayout>
+
+            <!-- Info cards pulled up -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/bg_page"
+                android:layout_marginTop="-24dp"
+                android:padding="16dp">
+
+                <!-- Quick stats row -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="16dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="72dp"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:background="@drawable/bg_card" android:layout_marginEnd="10dp"
+                        android:elevation="1dp">
+                        <TextView android:id="@+id/tvProfileExp"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="22sp" android:textStyle="bold"
+                            android:textColor="@color/accent_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="বছর অভিজ্ঞতা" android:textSize="11sp"
+                            android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="72dp"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:background="@drawable/bg_card" android:layout_marginEnd="10dp"
+                        android:elevation="1dp">
+                        <TextView android:id="@+id/tvProfileApplied"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="22sp" android:textStyle="bold"
+                            android:textColor="@color/status_success"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="আবেদন" android:textSize="11sp"
+                            android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="72dp"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:background="@drawable/bg_card" android:elevation="1dp">
+                        <TextView android:id="@+id/tvProfileAge"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="—" android:textSize="22sp" android:textStyle="bold"
+                            android:textColor="@color/status_info"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="বয়স" android:textSize="11sp"
+                            android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Info detail card -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:background="@drawable/bg_card"
+                    android:padding="20dp" android:layout_marginBottom="14dp"
+                    android:elevation="1dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="ব্যক্তিগত তথ্য / Personal Info"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="16dp"/>
+
+                    <!-- Phone row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+                        <FrameLayout android:layout_width="36dp" android:layout_height="36dp"
+                            android:layout_marginEnd="14dp">
+                            <View android:layout_width="36dp" android:layout_height="36dp"
+                                android:background="@drawable/bg_circle_blue"/>
+                            <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                                android:text="📞" android:textSize="15sp" android:gravity="center"/>
+                        </FrameLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="ফোন / Phone" android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                            <TextView android:id="@+id/tvProfilePhone"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="01XXXXXXXXX" android:textSize="14sp"
+                                android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginBottom="14dp"/>
+
+                    <!-- Location row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+                        <FrameLayout android:layout_width="36dp" android:layout_height="36dp"
+                            android:layout_marginEnd="14dp">
+                            <View android:layout_width="36dp" android:layout_height="36dp"
+                                android:background="@drawable/bg_circle_green"/>
+                            <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                                android:text="📍" android:textSize="15sp" android:gravity="center"/>
+                        </FrameLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="এলাকা / Location" android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                            <TextView android:id="@+id/tvProfileLocation"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Mirpur, Dhaka" android:textSize="14sp"
+                                android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginBottom="14dp"/>
+
+                    <!-- Skill row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+                        <FrameLayout android:layout_width="36dp" android:layout_height="36dp"
+                            android:layout_marginEnd="14dp">
+                            <View android:layout_width="36dp" android:layout_height="36dp"
+                                android:background="@drawable/bg_circle_orange"/>
+                            <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                                android:text="🛠" android:textSize="15sp" android:gravity="center"/>
+                        </FrameLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="দক্ষতা / Skill" android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                            <TextView android:id="@+id/tvProfileSkill"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Helper / Assistant" android:textSize="14sp"
+                                android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginBottom="14dp"/>
+
+                    <!-- Expected salary row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <FrameLayout android:layout_width="36dp" android:layout_height="36dp"
+                            android:layout_marginEnd="14dp">
+                            <View android:layout_width="36dp" android:layout_height="36dp"
+                                android:background="@drawable/bg_circle_purple"/>
+                            <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                                android:text="💰" android:textSize="15sp" android:gravity="center"/>
+                        </FrameLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="প্রত্যাশিত বেতন / Expected Salary"
+                                android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                            <TextView android:id="@+id/tvProfileSalary"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="৳8,000/মাস" android:textSize="14sp"
+                                android:textStyle="bold" android:textColor="@color/text_accent"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Logout button -->
+                <Button android:id="@+id/btnLogout"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:text="লগআউট / Logout"
+                    android:textSize="15sp" android:textStyle="bold"
+                    android:textColor="@color/status_error"
+                    android:background="@drawable/bg_badge_error"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Nav -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bottom_nav"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🏠"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navJobs" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="💼" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Jobs" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navApplied" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📋" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Applied" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navSaved"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔖"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Saved"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navNotification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔔"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

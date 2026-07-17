@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <!-- Header row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:paddingTop="24dp"
+        android:background="@color/bg_page">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="সব চাকরি / Jobs"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+
+        <!-- Filter icon button -->
+        <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+            android:background="@drawable/bg_card" android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                android:text="⚙" android:textSize="18sp" android:gravity="center"
+                android:textColor="@color/text_secondary"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Search bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_search"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔍  " android:textSize="15sp" android:textColor="@color/text_hint"/>
+        <EditText
+            android:id="@+id/etFilterLocation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="এলাকা বা পদ খুঁজুন / Location or Title..."
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <!-- Filter chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="12dp">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Spinner android:id="@+id/spinnerFilterTitle"
+                android:layout_width="140dp" android:layout_height="38dp"
+                android:background="@drawable/bg_chip_idle"
+                android:layout_marginEnd="10dp"/>
+            <Spinner android:id="@+id/spinnerFilterShift"
+                android:layout_width="120dp" android:layout_height="38dp"
+                android:background="@drawable/bg_chip_idle"
+                android:layout_marginEnd="10dp"/>
+            <Button android:id="@+id/btnSearch"
+                android:layout_width="wrap_content" android:layout_height="38dp"
+                android:text="খুঁজুন" android:textSize="13sp"
+                android:textColor="@color/text_on_accent"
+                android:background="@drawable/bg_btn_primary"
+                android:paddingStart="20dp" android:paddingEnd="20dp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Job count row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/tvJobCount"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="চাকরি পাওয়া গেছে: ০"
+            android:textSize="13sp" android:textColor="@color/text_secondary"/>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="20dp" android:layout_height="20dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Job list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerJobs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

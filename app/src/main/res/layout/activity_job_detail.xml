@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:paddingTop="24dp"
+        android:background="@color/bg_page">
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/btnBack">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="‹"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:textColor="@color/text_primary"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="চাকরির বিবরণ / Job Details"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"/>
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/btnSaveDetail">
+            <TextView
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:text="🔖" android:textSize="16sp" android:gravity="center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:overScrollMode="never">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Company hero card -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card"
+                android:padding="24dp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout android:layout_width="80dp" android:layout_height="80dp"
+                    android:layout_marginBottom="14dp">
+                    <View android:layout_width="80dp" android:layout_height="80dp"
+                        android:background="@drawable/bg_circle_purple"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:text="👟" android:textSize="34sp" android:gravity="center"/>
+                </FrameLayout>
+
+                <TextView android:id="@+id/tvDetailJobTitle"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Job Title" android:textSize="20sp" android:textStyle="bold"
+                    android:textColor="@color/text_primary" android:gravity="center"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView android:id="@+id/tvDetailCompany"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Company Name" android:textSize="14sp"
+                    android:textColor="@color/text_secondary" android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 3 info stat cards row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_card"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Salary -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_gravity="center" android:layout_marginBottom="8dp">
+                        <View android:layout_width="40dp" android:layout_height="40dp"
+                            android:background="@drawable/bg_circle_purple"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:text="💰" android:textSize="18sp" android:gravity="center"/>
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="বেতন" android:textSize="11sp"
+                        android:textColor="@color/text_secondary" android:gravity="center"/>
+                    <TextView android:id="@+id/tvDetailSalary"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="৳8,000/মাস" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:gravity="center"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View android:layout_width="1dp" android:layout_height="match_parent"
+                    android:background="@color/divider" android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <!-- Job Type -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_gravity="center" android:layout_marginBottom="8dp">
+                        <View android:layout_width="40dp" android:layout_height="40dp"
+                            android:background="@drawable/bg_circle_blue"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:text="⏱" android:textSize="18sp" android:gravity="center"/>
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="ধরন" android:textSize="11sp"
+                        android:textColor="@color/text_secondary" android:gravity="center"/>
+                    <TextView android:id="@+id/tvDetailJobType"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Full-Time" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:gravity="center"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View android:layout_width="1dp" android:layout_height="match_parent"
+                    android:background="@color/divider" android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <!-- Location -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_gravity="center" android:layout_marginBottom="8dp">
+                        <View android:layout_width="40dp" android:layout_height="40dp"
+                            android:background="@drawable/bg_circle_green"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:text="📍" android:textSize="18sp" android:gravity="center"/>
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="এলাকা" android:textSize="11sp"
+                        android:textColor="@color/text_secondary" android:gravity="center"/>
+                    <TextView android:id="@+id/tvDetailLocation"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Mirpur" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tags row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+                <TextView android:id="@+id/tvDetailShift"
+                    android:layout_width="wrap_content" android:layout_height="30dp"
+                    android:text="Day Shift" android:textSize="12sp" android:gravity="center"
+                    android:textColor="@color/tag_night_text" android:background="@drawable/bg_tag_blue"
+                    android:paddingStart="14dp" android:paddingEnd="14dp" android:layout_marginEnd="8dp"/>
+                <TextView android:id="@+id/tvDetailGender"
+                    android:layout_width="wrap_content" android:layout_height="30dp"
+                    android:text="Male / Female" android:textSize="12sp" android:gravity="center"
+                    android:textColor="@color/chip_idle_text" android:background="@drawable/bg_chip_idle"
+                    android:paddingStart="14dp" android:paddingEnd="14dp" android:layout_marginEnd="8dp"/>
+            </LinearLayout>
+
+            <!-- Description card -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card"
+                android:padding="20dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="বিবরণ / Job Description:"
+                    android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="@color/text_primary" android:layout_marginBottom="10dp"/>
+
+                <TextView android:id="@+id/tvDetailPayment"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="• বেতন পদ্ধতি: Salary Based"
+                    android:textSize="14sp" android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="4dp" android:layout_marginBottom="6dp"/>
+
+                <TextView android:id="@+id/tvDetailWorkers"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="• প্রয়োজনীয় কর্মী: ১০ জন"
+                    android:textSize="14sp" android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="4dp" android:layout_marginBottom="6dp"/>
+
+                <TextView android:id="@+id/tvDetailOvertime"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="• ⏰ওভারটাইম: আছে"
+                    android:textSize="14sp" android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="4dp"/>
+                <TextView android:id="@+id/tvDetailShelter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="• 🏠আবাসন: আছে"
+                    android:textSize="14sp" android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="4dp"/>
+                <TextView android:id="@+id/tvDetailFood"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="•  🍽 খাবার: আছে"
+                    android:textSize="14sp" android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="4dp"/>
+            </LinearLayout>
+
+            <!-- Contact card -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/bg_card"
+                android:padding="20dp"
+                android:layout_marginBottom="24dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📞  " android:textSize="18sp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="যোগাযোগ করুন" android:textSize="12sp"
+                        android:textColor="@color/text_secondary"/>
+                    <TextView android:id="@+id/tvDetailPhone"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="01XXXXXXXXX" android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom action bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_card"
+        android:padding="16dp"
+        android:paddingBottom="24dp">
+
+        <Button
+            android:id="@+id/btnSaveJob"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:text="সংরক্ষণ করুন"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:background="@drawable/bg_btn_white"
+            android:layout_marginEnd="12dp"/>
+
+        <Button
+            android:id="@+id/btnApplyNow"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="2"
+            android:text="আবেদন করুন / Apply Now"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_on_accent"
+            android:background="@drawable/bg_btn_primary"/>
+    </LinearLayout>
+</LinearLayout>

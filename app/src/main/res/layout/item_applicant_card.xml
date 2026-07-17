@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="18dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="1dp">
+
+    <!-- Worker info row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <CheckBox
+            android:id="@+id/cbSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"/>
+
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="14dp">
+            <View
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circle_blue"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="👷"
+                android:textSize="22sp"
+                android:gravity="center"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvApplicantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Worker Name"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" android:layout_marginBottom="3dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📍 "
+                    android:textSize="11sp"/>
+                <TextView
+                    android:id="@+id/tvApplicantLocation"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvApplicantStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending"
+            android:textSize="11sp"
+            android:textColor="@color/status_warning"
+            android:background="@drawable/bg_badge_warning"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"/>
+    </LinearLayout>
+
+    <!-- Details chips -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="14dp">
+        <TextView
+            android:id="@+id/tvApplicantExp"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="⏳ 0 বছর"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:textColor="@color/tag_fulltime_text" android:background="@drawable/bg_tag_purple"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:id="@+id/tvApplicantGender"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="Male"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:textColor="@color/chip_idle_text"
+            android:background="@drawable/bg_chip_idle"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:id="@+id/tvApplicantPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="📞 01X..."
+            android:textSize="11sp"
+            android:gravity="center"
+            android:textColor="@color/tag_night_text"
+            android:background="@drawable/bg_tag_blue"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvApplicantAppointment"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="📅 নির্ধারিত হয়নি"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:textColor="@color/status_info"
+            android:background="@drawable/bg_chip_idle"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginBottom="14dp"/>
+
+    <!-- Action buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✓ নিয়োগ"
+            android:textSize="9sp"
+            android:textColor="@color/status_success"
+            android:background="@drawable/bg_badge_success"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✕ বাতিল"
+            android:textSize="9sp"
+            android:textColor="@color/status_error"
+            android:background="@drawable/bg_badge_error"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnReview"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="পর্যালোচনা"
+            android:textSize="9sp"
+            android:textColor="@color/chip_active_text"
+            android:background="@drawable/bg_chip_idle"/>
+    </LinearLayout>
+</LinearLayout>

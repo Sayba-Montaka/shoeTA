@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="10dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="2dp">
+
+    <!-- Top row: logo + company info + bookmark -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="14dp">
+
+        <!-- Company logo circle -->
+        <FrameLayout android:layout_width="50dp" android:layout_height="50dp"
+            android:layout_marginEnd="14dp">
+            <View android:layout_width="50dp" android:layout_height="50dp"
+                android:background="@drawable/bg_circle_purple"/>
+            <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                android:text="👟" android:textSize="22sp" android:gravity="center"/>
+        </FrameLayout>
+
+        <!-- Title + location -->
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvJobTitle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Job Title"
+                android:textSize="16sp" android:textStyle="bold" android:textColor="@color/text_primary"
+                android:layout_marginBottom="3dp"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📍 " android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Location" android:textSize="13sp" android:textColor="@color/text_secondary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="  ·  " android:textSize="13sp" android:textColor="@color/text_hint"/>
+                <TextView
+                    android:id="@+id/tvSalary"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="৳0/মাস" android:textSize="13sp" android:textColor="@color/text_accent"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bookmark -->
+        <TextView
+            android:id="@+id/btnBookmark"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="🔖"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:background="@drawable/bg_card_soft"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/divider" android:layout_marginBottom="14dp"/>
+
+    <!-- Chips row: type tags + apply button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvJobType"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Full Time"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/tag_fulltime_text" android:background="@drawable/bg_tag_purple"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/tvShift"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Day Shift"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/chip_idle_text"
+            android:background="@drawable/bg_chip_idle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Both"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/chip_idle_text"
+            android:background="@drawable/bg_chip_idle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"/>
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/btnApply"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="আবেদন করুন"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/text_on_accent"
+            android:background="@drawable/bg_btn_primary"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+</LinearLayout>

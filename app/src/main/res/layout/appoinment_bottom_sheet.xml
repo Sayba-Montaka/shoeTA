@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_back">
+    <!-- ===================setNewDate==================-->
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Appointment"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <!-- Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Set a new date"
+            app:hintTextColor="@color/black"
+            android:id="@+id/dateInput"
+            app:endIconMode="dropdown_menu"
+            >
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/set_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:padding="9dp"
+                android:textColor="@color/black"
+                android:inputType="date"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Set the appointment time"
+            app:hintTextColor="@color/black"
+            android:id="@+id/number_do_input"
+            app:endIconMode="dropdown_menu"
+
+            >
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/appointment_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Footer -->
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Save"
+            android:background="@drawable/bg_badge_success"/>
+
+        <!-- ===================setNewDate==================-->
+    </LinearLayout>
+</LinearLayout>

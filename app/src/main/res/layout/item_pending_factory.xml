@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="1dp">
+
+    <TextView
+        android:id="@+id/tvPendingCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Name"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="6dp"/>
+    <TextView
+        android:id="@+id/tvProprietorCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ProprietorName"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="6dp"/>
+
+    <TextView
+        android:id="@+id/tvPendingPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📞 —"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/tvPendingLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📍 —"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnApprove"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✓ অনুমোদন"
+            android:textSize="12sp"
+            android:textColor="@color/status_success"
+            android:background="@drawable/bg_badge_success"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✕ প্রত্যাখ্যান"
+            android:textSize="12sp"
+            android:textColor="@color/status_error"
+            android:background="@drawable/bg_badge_error"/>
+    </LinearLayout>
+</LinearLayout>

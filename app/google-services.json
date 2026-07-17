@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "478535969702",
+    "project_id": "shoeta-a3568",
+    "storage_bucket": "shoeta-a3568.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478535969702:android:5f1f47e3ba50d4721cfd67",
+        "android_client_info": {
+          "package_name": "com.example.shoeta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADrfyT_FkXptW9PywNkTrhhsz0swtwWOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

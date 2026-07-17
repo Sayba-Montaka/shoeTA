@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+        <!--  ─── Brand / accent ────────────────────────────────  -->
+        <color name="accent_primary">#4F46E5</color>
+        <!--  indigo — headers, primary buttons, active states  -->
+        <color name="accent_light">#EEF0FF</color>
+        <!--  pale tint of accent_primary — chips, soft highlights  -->
+        <!--  ─── Backgrounds & surfaces ────────────────────────  -->
+        <color name="bg_page">#EEF0F8</color>
+        <!--  matches 0xFFEEF0F8 already used in Java  -->
+        <color name="bg_card">#FFFFFF</color>
+        <color name="divider">#E5E7EB</color>
+        <!--  ─── Text ───────────────────────────────────────────  -->
+        <color name="text_primary">#1A1D2E</color>
+        <!--  matches 0xFF1A1D2E already used in Java  -->
+        <color name="text_secondary">#6B7280</color>
+        <color name="text_hint">#9CA3AF</color>
+        <color name="text_accent">#4F46E5</color>
+        <color name="text_on_accent">#FFFFFF</color>
+        <!--  ─── Status (matches badge colors hardcoded in Java) ──  -->
+        <color name="status_success">#22C55E</color>
+        <color name="status_error">#EF4444</color>
+        <color name="status_warning">#F59E0B</color>
+        <color name="status_info">#3B82F6</color>
+        <!--  ─── Chips (job filter pills) ──────────────────────  -->
+        <color name="chip_active_text">#FFFFFF</color>
+        <color name="chip_idle_text">#6B7280</color>
+        <!--  ─── Job card tags ─────────────────────────────────  -->
+        <color name="tag_fulltime_text">#1D4ED8</color>
+        <color name="tag_night_text">#7C3AED</color>
+
+</resources>

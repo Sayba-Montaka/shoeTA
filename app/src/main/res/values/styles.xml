@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Applied via app:shapeAppearanceOverlay on the ShapeableImageView
+         in activity_worker_register.xml (worker_image) — turns the
+         corner family fully round so the photo renders as an oval/circle
+         regardless of the view's width/height ratio. -->
+    <style name="OvalImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

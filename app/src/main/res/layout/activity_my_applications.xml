@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:padding="20dp" android:paddingTop="24dp" android:background="@color/bg_page">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="আমার আবেদন" android:textSize="22sp" android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="My Applications" android:textSize="13sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <ProgressBar android:id="@+id/progressBar"
+            android:layout_width="24dp" android:layout_height="24dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Empty state -->
+    <LinearLayout android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical"
+        android:gravity="center" android:visibility="gone">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📋" android:textSize="56sp" android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="এখনো কোনো আবেদন নেই" android:textSize="16sp"
+            android:textColor="@color/text_secondary" android:gravity="center"
+            android:layout_marginBottom="6dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="No applications yet" android:textSize="13sp"
+            android:textColor="@color/text_hint" android:gravity="center"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerApplications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"/>
+
+    <!-- Bottom Nav -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="72dp"
+        android:orientation="horizontal" android:background="@drawable/bg_bottom_nav"
+        android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="8dp">
+
+        <LinearLayout android:id="@+id/navHome" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🏠" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Home" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navJobs" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="💼" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Jobs" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navApplied" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📋" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Applied" android:textSize="10sp" android:textColor="@color/accent_primary"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navSaved" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔖" android:textSize="20sp" android:gravity="center"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Saved" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/navNotification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔔"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
