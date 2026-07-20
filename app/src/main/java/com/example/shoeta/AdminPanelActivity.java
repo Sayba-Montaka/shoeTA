@@ -35,7 +35,7 @@ public class AdminPanelActivity extends AppCompatActivity {
     private SessionManager sm;
     private RequestQueue queue;
 
-    LinearLayout btnLogout, btnManageJobs, btnManageWorkers, btnPendingFactories;
+    LinearLayout btnLogout, btnManageJobs;
     Button btnAddJobTitle;
 
     @Override
@@ -52,7 +52,6 @@ public class AdminPanelActivity extends AppCompatActivity {
         etNewJobTitle = findViewById(R.id.etNewJobTitle);
         recyclerJobTitles = findViewById(R.id.recyclerJobTitles);
         btnLogout = findViewById(R.id.btnLogout);
-        btnManageWorkers = findViewById(R.id.btnManageWorkers);
         btnManageJobs = findViewById(R.id.btnManageJobs);
         btnAddJobTitle = findViewById(R.id.btnAddJobTitle);
 
@@ -61,11 +60,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         recyclerJobTitles.setAdapter(jtAdapter);
 
         btnManageJobs.setOnClickListener(v ->
-                Toast.makeText(this, "চাকরি ব্যবস্থাপনা (শীঘ্রই আসছে)", Toast.LENGTH_SHORT).show());
-
-        btnManageWorkers.setOnClickListener(v ->
-                Toast.makeText(this, "কর্মী তালিকা (শীঘ্রই আসছে)", Toast.LENGTH_SHORT).show());
-
+              startActivity(new Intent(this, PendingJobPaymentsActivity.class)));
         btnLogout.setOnClickListener(v -> {
             sm.logout();
             Intent i = new Intent(this, MainActivity.class);

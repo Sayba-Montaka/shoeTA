@@ -32,6 +32,7 @@ public class FactoryDashboardActivity extends AppCompatActivity {
     private RequestQueue queue;
     FrameLayout ad_view_container;
     AdView adView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +83,9 @@ public class FactoryDashboardActivity extends AppCompatActivity {
 
         findViewById(R.id.btnPostJob).setOnClickListener(v ->
                 startActivity(new Intent(this, PostJobActivity.class)));
+
+        findViewById(R.id.btnPrivacy).setOnClickListener(view ->
+                startActivity(new Intent(this,PolicyTerms.class)));
 
         findViewById(R.id.btnMyJobs).setOnClickListener(v -> {
             Intent i = new Intent(this, JobListActivity.class);

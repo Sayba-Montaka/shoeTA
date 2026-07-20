@@ -241,8 +241,49 @@
                         android:textSize="22sp"
                         android:textColor="@color/accent_primary"/>
                 </LinearLayout>
+                <!-- privacy policy-->
 
-
+                <LinearLayout
+                    android:id="@+id/btnPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_card"
+                    android:padding="16dp"
+                    android:layout_marginBottom="14sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="1dp">
+                    <FrameLayout
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginEnd="14dp">
+                        <View
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:background="@drawable/bg_badge_error"/>
+                        <TextView
+                            android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:text="🛡️"
+                            android:textSize="18sp"
+                            android:gravity="center"/>
+                    </FrameLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="গোপনীয়তা নীতি এবং শর্তাবলী \n Privacy Policy and Terms"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="22sp"
+                        android:textColor="@color/status_error"/>
+                </LinearLayout>
                 <!-- Logout card -->
                 <LinearLayout
                     android:id="@+id/btnLogout"
@@ -284,6 +325,7 @@
                         android:textSize="22sp"
                         android:textColor="@color/status_error"/>
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 

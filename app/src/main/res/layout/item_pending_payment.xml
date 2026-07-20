@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="1dp">
+
+    <TextView
+        android:id="@+id/tvPayCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Name"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvPayJobTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="পদ: —"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/tvPayPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📞 —"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/tvPayDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="সময়কাল: —"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvPayAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="৳0"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_accent"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvPayTxnId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction ID: —"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/status_info"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnVerifyPayment"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✓ যাচাই করুন"
+            android:textSize="12sp"
+            android:textColor="@color/status_success"
+            android:background="@drawable/bg_badge_success"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnRejectPayment"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✕ প্রত্যাখ্যান"
+            android:textSize="12sp"
+            android:textColor="@color/status_error"
+            android:background="@drawable/bg_badge_error"/>
+    </LinearLayout>
+</LinearLayout>

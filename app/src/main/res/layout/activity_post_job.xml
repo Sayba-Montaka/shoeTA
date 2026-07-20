@@ -196,6 +196,7 @@
                 android:textColor="@color/text_primary"
                 android:textColorHint="@color/text_hint"
                 android:textSize="15sp"
+                android:inputType="number"
                 android:layout_marginBottom="18dp"/>
 
             <!-- Contact phone -->
@@ -221,6 +222,34 @@
                 android:textSize="15sp"
                 android:layout_marginBottom="20dp"/>
 
+            <!-- Post Duration -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="আপনি কত সপ্তাহের জন্য পোস্ট করতে চান? / Post Duration"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"/>
+            <Spinner
+                android:id="@+id/spinnerDuration"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_spinner"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvTokenInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="টোকেন লোড হচ্ছে..."
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/accent_primary"
+                android:background="@drawable/bg_card_soft"
+                android:padding="12dp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"/>
             <!-- Toggles row -->
             <LinearLayout
                 android:layout_width="match_parent"
