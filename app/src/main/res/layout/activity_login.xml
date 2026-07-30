@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_page"
+    android:background="@drawable/bg_gradient_header"
     android:fillViewport="true">
 
     <LinearLayout
@@ -38,14 +38,19 @@
                 android:textColor="#FFFFFF"/>
         </LinearLayout>
 
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/glassCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_overlay">
         <!-- White form card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/bg_card"
             android:padding="28dp"
-            android:layout_marginTop="-20dp">
+            android:paddingTop="32dp"
+            android:paddingBottom="40dp">
 
             <!-- Phone / Username -->
             <TextView
@@ -123,5 +128,7 @@
                 android:layout_gravity="center_horizontal"
                 android:padding="8dp"/>
         </LinearLayout>
+        </eightbitlab.com.blurview.BlurView>
     </LinearLayout>
+
 </ScrollView>

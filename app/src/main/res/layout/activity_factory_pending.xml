@@ -3,10 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp"
-    android:background="@color/bg_page">
+    android:background="@drawable/bg_gradient_header">
 
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/glassCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_glass_overlay">
+
+        <LinearLayout
+            android:layout_marginTop="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:paddingBottom="40dp">
     <TextView
         android:id="@+id/tvStatusIcon"
         android:layout_width="wrap_content"
@@ -46,4 +59,6 @@
         android:textColor="@color/text_on_accent"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"/>
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
 </LinearLayout>

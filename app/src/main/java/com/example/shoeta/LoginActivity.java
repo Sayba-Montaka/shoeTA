@@ -3,6 +3,7 @@ package com.example.shoeta;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.*;
 
 import androidx.annotation.Nullable;
@@ -20,6 +21,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
+
+import eightbitlab.com.blurview.BlurView;
+import eightbitlab.com.blurview.RenderScriptBlur;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -68,6 +72,17 @@ public class LoginActivity extends AppCompatActivity {
                             : WorkerRegisterActivity.class);
             startActivity(i);
         });
+
+        //blur view
+        BlurView glassCardView = findViewById(R.id.glassCard);
+
+        ViewGroup rootView = findViewById(android.R.id.content);
+
+        glassCardView.setupWith(rootView, new RenderScriptBlur(this))
+                .setFrameClearDrawable(getWindow().getDecorView().getBackground())
+                .setBlurRadius(20f);
+
+        glassCardView.setClipToOutline(true);
     }
 
     private void doLogin() {

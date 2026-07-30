@@ -27,7 +27,7 @@ public class AdminPanelActivity extends AppCompatActivity {
 
     private static final String BASE_URL = "https://blood-bridge.org/shoeTA/";
 
-    private TextView tvStatJobs, tvStatWorkers, tvStatApps;
+    private TextView tvStatJobs, tvStatWorkers, tvStatApps,tvPendingJobs;
     private EditText etNewJobTitle;
     private RecyclerView recyclerJobTitles;
     private final List<JSONObject> titleList = new ArrayList<>();
@@ -54,6 +54,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         btnLogout = findViewById(R.id.btnLogout);
         btnManageJobs = findViewById(R.id.btnManageJobs);
         btnAddJobTitle = findViewById(R.id.btnAddJobTitle);
+        tvPendingJobs = findViewById(R.id.tvPendingJobs);
 
         recyclerJobTitles.setLayoutManager(new LinearLayoutManager(this));
         jtAdapter = new JobTitleAdapter(titleList, sm, this, queue, BASE_URL);
@@ -72,10 +73,13 @@ public class AdminPanelActivity extends AppCompatActivity {
                 startActivity(new Intent(this, PendingFactoriesActivity.class)));
 
         btnAddJobTitle.setOnClickListener(v -> addJobTitle());
+        tvStatJobs.setOnClickListener(view->
+                startActivity(new Intent( this,JobListActivity.class)));
 
         loadStats();
         loadJobTitles();
         loadPendingCount();
+        loadPendingJobs();
     }
 
     @Override
@@ -145,7 +149,22 @@ public class AdminPanelActivity extends AppCompatActivity {
                     try {
                         JSONArray arr = new JSONObject(response).getJSONArray("factories");
                         TextView tvPendingCount = findViewById(R.id.tvPendingCount);
-                        tvPendingCount.setText(arr.length() + " pending");
+                        tvPendingCount.setText(arr.length() + " factory pending");
+                    } catch (Exception ignored) {
+                    }
+                },
+                error -> {
+                });
+        queue.add(req);
+    }
+    private void loadPendingJobs() {
+        String url = BASE_URL + "admin_settings.php?action=list_pending_payments&admin_id=" + sm.getUserId();
+
+        StringRequest req = new StringRequest(Request.Method.GET, url,
+                response -> {
+                    try {
+                        JSONArray arr = new JSONObject(response).getJSONArray("jobs");
+                        tvPendingJobs.setText(arr.length() + " jobs pending");
                     } catch (Exception ignored) {
                     }
                 },

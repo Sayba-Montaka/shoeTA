@@ -44,7 +44,7 @@ public class PostJobActivity extends AppCompatActivity {
     private final List<Integer> typeIds     = new ArrayList<>();
     private final List<String>  payNames    = new ArrayList<>();
     private final List<Integer> payIds      = new ArrayList<>();
-    private final List<String>  genderOpts  = Arrays.asList("Both", "Male", "Female");
+    private final List<String>  genderOpts  = Arrays.asList("উভয়","পুরুষ", "মহিলা");
     private final List<String>  durationOpts = Arrays.asList(
             "১ সপ্তাহ / 1 Week", "২ সপ্তাহ / 2 Weeks", "৩ সপ্তাহ / 3 Weeks", "৪ সপ্তাহ / 4 Weeks");
 
@@ -89,13 +89,6 @@ public class PostJobActivity extends AppCompatActivity {
             @Override public void onItemSelected(AdapterView<?> p, View v, int pos, long id) { updateTokenDisplay(); }
             @Override public void onNothingSelected(AdapterView<?> p) {}
         });
-
-
-        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("Payment Number", PAYMENT_NUMBER);
-        clipboard.setPrimaryClip(clip);
-
-        Toast.makeText(this, "Payment number copied", Toast.LENGTH_SHORT).show();
 
         loadDropdowns();
         loadTokenBalance();
@@ -194,6 +187,11 @@ public class PostJobActivity extends AppCompatActivity {
         LinearLayout container = new LinearLayout(this);
         container.setOrientation(LinearLayout.VERTICAL);
         container.setPadding(48, 16, 48, 16);
+
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("Payment Number", PAYMENT_NUMBER);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(this, "Payment number copied", Toast.LENGTH_SHORT).show();
 
         Button btnOpenBkash = new Button(this);
         btnOpenBkash.setText("📲 বিকাশ অ্যাপ খুলুন / Open bKash");

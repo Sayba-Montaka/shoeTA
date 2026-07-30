@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_page"
+    android:background="@drawable/bg_gradient_header"
     android:fillViewport="true">
 
     <LinearLayout
@@ -10,6 +10,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/glassCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_glass_overlay">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
         <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +62,7 @@ Factory Registration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/bg_card"
+            android:background="@drawable/bg_gradient_header"
             android:padding="24dp"
             android:layout_marginTop="-16dp">
 
@@ -150,5 +161,7 @@ Factory Registration"
                 android:textSize="13sp" android:textColor="@color/text_accent"
                 android:layout_gravity="center_horizontal" android:padding="8dp"/>
         </LinearLayout>
+    </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
     </LinearLayout>
 </ScrollView>

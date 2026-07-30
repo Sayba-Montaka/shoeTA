@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_page">
+    android:background="@drawable/bg_gradient_header">
 
     <!-- Header -->
     <LinearLayout
@@ -37,6 +37,17 @@
             android:textColor="#FFFFFF"/>
     </LinearLayout>
 
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/glassCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_glass_overlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        >
     <!-- Applicant list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerApplicants"
@@ -59,4 +70,6 @@
         android:visibility="gone"
         />
 
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
 </LinearLayout>

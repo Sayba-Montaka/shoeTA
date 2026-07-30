@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_page">
+    android:background="@drawable/bg_gradient_header">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -61,12 +61,20 @@
                     android:paddingTop="4dp" android:paddingBottom="4dp"/>
             </LinearLayout>
 
+
+            <!-- Bottom glass section (was solid white LinearLayout, now BlurView) -->
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/glassCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_overlay">
+
             <!-- Info cards pulled up -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            <LinearLayout  android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/bg_page"
-                android:layout_marginTop="-24dp"
-                android:padding="16dp">
+                android:padding="28dp"
+                android:paddingBottom="40dp">
 
                 <!-- Quick stats row -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -231,18 +239,20 @@
                     android:textColor="@color/status_error"
                     android:background="@drawable/bg_badge_error"/>
             </LinearLayout>
+            </eightbitlab.com.blurview.BlurView>
         </LinearLayout>
+
     </ScrollView>
 
     <!-- Bottom Nav -->
     <LinearLayout
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
-        android:background="@drawable/bg_bottom_nav"
         android:gravity="center_vertical"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp">
+
+        >
 
         <LinearLayout
             android:id="@+id/navHome"
@@ -252,37 +262,62 @@
             android:orientation="vertical"
             android:gravity="center"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:background="@drawable/bg_glass_overlay"
+            >
             <TextView
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="🏠"
                 android:textSize="20sp"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="10sp"
-                android:textColor="@color/text_secondary"/>
+                android:textColor="@color/accent_primary"/>
         </LinearLayout>
 
-        <LinearLayout android:id="@+id/navJobs" android:layout_width="0dp"
-            android:layout_height="match_parent" android:layout_weight="1"
-            android:orientation="vertical" android:gravity="center"
-            android:clickable="true" android:focusable="true">
+        <LinearLayout
+            android:id="@+id/navJobs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_glass_overlay">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="💼" android:textSize="20sp" android:gravity="center"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="Jobs" android:textSize="10sp" android:textColor="@color/text_secondary"/>
         </LinearLayout>
 
-        <LinearLayout android:id="@+id/navApplied" android:layout_width="0dp"
-            android:layout_height="match_parent" android:layout_weight="1"
-            android:orientation="vertical" android:gravity="center"
-            android:clickable="true" android:focusable="true">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="📋" android:textSize="20sp" android:gravity="center"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Applied" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+        <LinearLayout
+            android:id="@+id/navApplied"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_glass_overlay"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Applied"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary"/>
         </LinearLayout>
 
         <LinearLayout
@@ -293,14 +328,18 @@
             android:orientation="vertical"
             android:gravity="center"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:background="@drawable/bg_glass_overlay"
+            >
             <TextView
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="🔖"
                 android:textSize="20sp"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Saved"
                 android:textSize="10sp"
                 android:textColor="@color/text_secondary"/>
@@ -313,8 +352,10 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
+            android:background="@drawable/bg_glass_overlay"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:paddingRight="2dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -329,6 +370,4 @@
                 android:textColor="@color/text_secondary"/>
         </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

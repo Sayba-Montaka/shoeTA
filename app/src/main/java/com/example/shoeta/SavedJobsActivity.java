@@ -76,6 +76,7 @@ public class SavedJobsActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         jobList.clear();
         try {
+            progressBar.setVisibility(View.GONE);
             JSONArray arr = new JSONArray(prefs.getString(PREF_KEY, "[]"));
             for (int i = 0; i < arr.length(); i++) jobList.add(arr.getJSONObject(i));
         } catch (Exception e) {

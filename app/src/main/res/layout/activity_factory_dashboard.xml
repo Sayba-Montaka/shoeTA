@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_page">
+    android:background="@drawable/bg_gradient_header">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -125,9 +125,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/bg_page"
+                android:background="@drawable/bg_gradient_header"
                 android:layout_marginTop="-16dp"
-                android:padding="16dp">
+                >
+
+                <!-- Bottom glass section (was solid white LinearLayout, now BlurView) -->
+                <eightbitlab.com.blurview.BlurView
+                    android:id="@+id/glassCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_glass_overlay">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="90dp"
+                    android:paddingTop="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -325,8 +341,10 @@
                         android:textSize="22sp"
                         android:textColor="@color/status_error"/>
                 </LinearLayout>
-
+                </LinearLayout>
+                </eightbitlab.com.blurview.BlurView>
             </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>

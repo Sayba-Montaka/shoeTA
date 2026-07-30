@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer layer: gradient "border" catching light from top-left -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp"/>
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#66FFFFFF"
+                android:centerColor="#33FFFFFF"
+                android:endColor="#0DFFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Inner layer: the actual glass fill, inset by 1dp so the outer layer shows as a thin border -->
+    <item
+        android:top="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp"/>
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#26FFFFFF"
+                android:endColor="#0DFFFFFF"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_page">
+    android:background="@drawable/bg_gradient_header">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,7 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <!-- Purple admin header -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -115,12 +114,26 @@
             </LinearLayout>
 
             <!-- Content area -->
-            <LinearLayout android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/bg_page"
+                android:background="@drawable/bg_gradient_header"
                 android:layout_marginTop="-16dp"
-                android:padding="16dp">
+
+                >
+                <!-- Bottom glass section (was solid white LinearLayout, now BlurView) -->
+                <eightbitlab.com.blurview.BlurView
+                    android:id="@+id/glassCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_glass_overlay">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
                 <!-- Pending Factory Approvals -->
                 <LinearLayout
                     android:id="@+id/btnPendingFactories"
@@ -156,10 +169,57 @@
                             android:id="@+id/tvPendingCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0 pending"
+                            android:text="0 factory pending"
                             android:textSize="12sp"
                             android:textColor="@color/status_warning"/>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="22sp"
+                        android:textColor="@color/accent_primary"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btnManageJobs"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_card"
+                    android:padding="14dp"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="1dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏭"
+                        android:textSize="22sp"
+                        android:layout_marginEnd="12dp"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="পেমেন্ট অনুমোদন/ Payment Approvals"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+                        <TextView
+                            android:id="@+id/tvPendingJobs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 jobs pending"
+                            android:textSize="12sp"
+                            android:textColor="@color/status_warning"/>
+                    </LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -174,38 +234,10 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="16dp">
                     <LinearLayout
-                        android:id="@+id/btnManageJobs"
-                        android:layout_width="0dp"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@drawable/bg_card"
-                        android:layout_marginEnd="10dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:elevation="1dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="💼"
-                            android:textSize="24sp"
-                            android:gravity="center"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pending jobs"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_primary"
-                            android:gravity="center"/>
-                    </LinearLayout>
-
-                    <LinearLayout
                         android:id="@+id/btnLogout"
-                        android:layout_width="0dp"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
                         android:gravity="center"
                         android:background="@drawable/bg_badge_error"
                         android:clickable="true"
@@ -221,7 +253,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Logout"
-                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
                             android:textColor="@color/status_error"
                             android:gravity="center"/>
                     </LinearLayout>
@@ -274,6 +307,9 @@
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false"/>
             </LinearLayout>
+                </eightbitlab.com.blurview.BlurView>
+            </LinearLayout>
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

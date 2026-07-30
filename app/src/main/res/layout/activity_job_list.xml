@@ -3,8 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_page">
+    android:background="@drawable/bg_gradient_header">
 
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/glassCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_glass_overlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
     <!-- Header row -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +24,7 @@
         android:gravity="center_vertical"
         android:padding="20dp"
         android:paddingTop="24dp"
-        android:background="@color/bg_page">
+        >
 
         <TextView
             android:layout_width="0dp"
@@ -112,5 +123,6 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:clipToPadding="false"/>
-
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
 </LinearLayout>
