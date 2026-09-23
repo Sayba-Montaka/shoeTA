@@ -59,7 +59,8 @@
             android:gravity="center"
             android:background="@drawable/bg_card_soft"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <!-- Divider -->

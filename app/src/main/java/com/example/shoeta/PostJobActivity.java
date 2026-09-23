@@ -222,12 +222,10 @@ public class PostJobActivity extends AppCompatActivity {
                 .setView(container)
                 .setPositiveButton("জমা দিন / Submit", (dialog, which) -> {
                     String txnId = etTransactionId.getText().toString().trim();
-                    if (txnId.isEmpty()) {
-                        Toast.makeText(this, "Transaction ID লিখুন", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    if (txnId.length() < 6) {
-                        Toast.makeText(this, "Transaction ID সঠিক মনে হচ্ছে না, আবার চেক করুন", Toast.LENGTH_SHORT).show();
+
+
+                    if (!RegistrationValidator.isTransactionIdValid(txnId)) {
+                        Toast.makeText(this, "Transaction ID লিখুন/Transaction ID সঠিক মনে হচ্ছে না, আবার চেক করুন", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     doPostJob(txnId);

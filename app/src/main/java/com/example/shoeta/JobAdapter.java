@@ -72,6 +72,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.VH> {
 
 
             if (h.btnBookmark != null && sm.isWorker()) {
+                h.btnBookmark.setVisibility(View.VISIBLE);
                 h.btnBookmark.setText(
                         isSaved(jobId) ? "\uD83C\uDFF3\uFE0F" : "\uD83D\uDD16");
                 h.btnBookmark.setOnClickListener(v -> toggleSave(j, h.btnBookmark));

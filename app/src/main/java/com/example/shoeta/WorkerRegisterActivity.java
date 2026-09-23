@@ -126,11 +126,10 @@ public class WorkerRegisterActivity extends AppCompatActivity {
         String name  = etName.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
         String pass  = etPassword.getText().toString().trim();
-        if (name.isEmpty() || phone.isEmpty() || pass.isEmpty()) {
-            Toast.makeText(this, "নাম, ফোন এবং পাসওয়ার্ড আবশ্যক", Toast.LENGTH_SHORT).show(); return;
-        }
-        if (pass.length() < 6) {
-            Toast.makeText(this, "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে", Toast.LENGTH_SHORT).show(); return;
+
+        if (!RegistrationValidator.isWorkerRegistrationValid(name, phone, pass)) {
+            Toast.makeText(this, "নাম, ফোন এবং পাসওয়ার্ড আবশ্যক (পাসওয়ার্ড কমপক্ষে ৬ অক্ষর)", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         progressBar.setVisibility(View.VISIBLE);

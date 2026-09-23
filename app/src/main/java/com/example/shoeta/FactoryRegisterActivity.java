@@ -55,12 +55,8 @@ public class FactoryRegisterActivity extends AppCompatActivity {
         String loc     = etLocation.getText().toString().trim();
         String proprietorName = etProprietorName.getText().toString().trim();
 
-        if (company.isEmpty() || phone.isEmpty() || pass.isEmpty()) {
-            Toast.makeText(this, "নাম, ফোন এবং পাসওয়ার্ড আবশ্যক", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (pass.length() < 6) {
-            Toast.makeText(this, "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে", Toast.LENGTH_SHORT).show();
+        if (!RegistrationValidator.isFactoryRegistrationValid(company, phone, pass)) {
+            Toast.makeText(this, "নাম, ফোন এবং পাসওয়ার্ড আবশ্যক (পাসওয়ার্ড কমপক্ষে ৬ অক্ষর)", Toast.LENGTH_SHORT).show();
             return;
         }
 

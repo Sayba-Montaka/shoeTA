@@ -90,10 +90,11 @@ public class LoginActivity extends AppCompatActivity {
         String phoneOrUser = etPhone.getText().toString().trim();
         String password = etPassword.getText().toString();
 
-        if (phoneOrUser.isEmpty() || password.isEmpty()) {
+        if (!RegistrationValidator.isLoginInputValid(phoneOrUser, password)) {
             Toast.makeText(this, "সব তথ্য পূরণ করুন", Toast.LENGTH_SHORT).show();
             return;
         }
+
         String url ="https://blood-bridge.org/shoeTA/login.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

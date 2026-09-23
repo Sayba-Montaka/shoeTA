@@ -69,12 +69,6 @@ public class JobDetailActivity extends AppCompatActivity {
 
         Button btnApply = findViewById(R.id.btnApplyNow);
         Button btnSave  = findViewById(R.id.btnSaveJob);
-        FrameLayout    btnSaveDetail = findViewById(R.id.btnSaveDetail); // small bookmark icon near the header
-
-        View.OnClickListener saveClick = v ->
-                Toast.makeText(this, "সংরক্ষিত হয়েছে / Saved", Toast.LENGTH_SHORT).show();
-        if (btnSave != null) btnSave.setOnClickListener(saveClick);
-        if (btnSaveDetail != null) btnSaveDetail.setOnClickListener(saveClick);
 
         if (sm.isWorker()) {
             btnApply.setOnClickListener(v -> applyNow(btnApply));

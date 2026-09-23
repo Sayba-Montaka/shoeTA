@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/bg_gradient_header">
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/glassCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_glass_overlay">
 
-    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/below"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:background="@drawable/bg_gradient_header"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:padding="20dp">
 
         <TextView
@@ -37,27 +46,19 @@
             android:textColor="#FFFFFF"/>
     </LinearLayout>
 
-    <eightbitlab.com.blurview.BlurView
-        android:id="@+id/glassCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_glass_overlay">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-        >
     <!-- Applicant list -->
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/below"
         android:id="@+id/recyclerApplicants"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:padding="16dp"
         android:clipToPadding="false"
         android:overScrollMode="never"/>
     <TextView
+        android:layout_alignParentBottom="true"
         android:id="@+id/appoinmentHover"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -69,7 +70,7 @@
         android:background="@drawable/bg_gradient_header"
         android:visibility="gone"
         />
-
-        </LinearLayout>
+    </LinearLayout>
     </eightbitlab.com.blurview.BlurView>
-</LinearLayout>
+
+</RelativeLayout>
